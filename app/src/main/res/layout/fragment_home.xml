@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_1"
+    tools:context=".ui.home.HomeFragment">
+
+    <ProgressBar
+        android:id="@+id/probarEmoInference"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="184dp"
+        android:layout_height="180dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/circle_shape"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="90"
+        android:progressDrawable="@drawable/circular_progress_bar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.419" />
+
+    <ImageButton
+        android:id="@+id/imgbtnSorP"
+        android:layout_width="53dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="112dp"
+        android:background="@color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/probarEmoInference"
+        app:layout_constraintStart_toStartOf="@+id/probarEmoInference"
+        app:layout_constraintTop_toBottomOf="@+id/probarEmoInference"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/icon2"
+        tools:srcCompat="@drawable/icon2" />
+
+    <ImageView
+        android:id="@+id/imgvEmoState"
+        android:layout_width="86dp"
+        android:layout_height="84dp"
+        app:layout_constraintBottom_toBottomOf="@+id/probarEmoInference"
+        app:layout_constraintEnd_toEndOf="@+id/probarEmoInference"
+        app:layout_constraintStart_toStartOf="@+id/probarEmoInference"
+        app:layout_constraintTop_toTopOf="@+id/probarEmoInference"
+        app:layout_constraintVertical_bias="0.51"
+        app:srcCompat="@drawable/emoji_neutral" />
+
+    <TextView
+        android:id="@+id/tvState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="I am satisfied!"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/imgbtnSorP"
+        app:layout_constraintEnd_toEndOf="@+id/probarEmoInference"
+        app:layout_constraintStart_toStartOf="@+id/probarEmoInference"
+        app:layout_constraintTop_toBottomOf="@+id/probarEmoInference"
+        app:layout_constraintVertical_bias="0.126" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Know Yourself"
+        android:textColor="#ffffff"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.692" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="176dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Real-time mood"
+        android:textColor="#7fe3f0"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/probarEmoInference"
+        app:layout_constraintEnd_toEndOf="@+id/probarEmoInference"
+        app:layout_constraintStart_toStartOf="@+id/probarEmoInference" />
+
+    <TextView
+        android:id="@+id/tvStatisticTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test"
+        android:textColor="@color/transparent"
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="16dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

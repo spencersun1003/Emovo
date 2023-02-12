@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#FFC6C0</color>
+    <color name="colorBabyBlue">#03A9F4</color>
+    <color name="probarEmoAnger">#FFC6C0</color>
+    <color name="probarEmoNetrual">#7FE3F0</color>
+    <color name="probarEmoBackground">#7265E3</color>
+
+    <color name="calendar_selected_range_bg">#E9E6FB</color>
+    <color name="calendar_selected_day_bg">#E9E6FB</color>
+    <color name="calendar_unavailable_bg">#F44336</color>
+    <color name="calendar_range_middle_unavailable_bg">#F44336</color>
+    <color name="calendar_range_middle_deactivated_bg">#673AB7</color>
+    <color name="calendar_text_selected">#F44336</color>
+    <color name="dateTimeRangePickerRangeTextColorInactive">#F44336</color>
+
+    <color name="red">#FF0000</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="GeneralScore">#7FE3F0</color>
+    <color name="GeneralScoreComment1">#6C5DD3</color> />
+</resources>

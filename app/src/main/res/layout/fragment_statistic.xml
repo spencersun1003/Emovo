@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_statistic"
+    tools:context=".ui.statistic.StatisticFragment">
+
+    <!--DatePicker
+        android:id="@+id/dpStatistic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="-57dp" /-->
+
+    <ImageButton
+        android:id="@+id/imgbtnStatiticReturn"
+        android:layout_width="33dp"
+        android:layout_height="34dp"
+        android:background="@color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/statistic_return"
+        app:layout_constraintBottom_toTopOf="@+id/cvStatiticRange"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtnStatiticEdit"
+        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.782" />
+
+    <ImageButton
+        android:id="@+id/imgbtnStatiticEdit"
+        android:layout_width="33dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="28dp"
+        android:background="@color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/statistic_edit"
+        app:layout_constraintBottom_toBottomOf="@+id/imgbtnStatiticReturn"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtnStatiticDelete"
+        app:layout_constraintTop_toTopOf="@+id/imgbtnStatiticReturn" />
+
+    <ImageButton
+        android:id="@+id/imgbtnStatiticDelete"
+        android:layout_width="33dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/statistic_delete"
+        app:layout_constraintBottom_toBottomOf="@+id/imgbtnStatiticReturn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgbtnStatiticReturn" />
+
+    <com.savvi.rangedatepicker.CalendarPickerView
+        android:id="@+id/cvStatiticRange"
+        android:layout_width="293dp"
+        android:layout_height="286dp"
+        android:layout_marginTop="80dp"
+        android:background="@color/transparent"
+        android:clipToPadding="false"
+        android:scrollbarStyle="outsideOverlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tsquare_dayTextColor="@color/black"
+        app:tsquare_dividerColor="@color/transparent"
+        app:tsquare_headerTextColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tvStatisticTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/transparent"
+        tools:layout_editor_absoluteY="1dp" />
+
+    <HorizontalScrollView
+        android:layout_width="285dp"
+        android:layout_height="150dp"
+        android:background="@color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.895">
+
+        <org.pytorch.demo.speechrecognition.Histogram
+            android:id="@+id/Histogram"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            app:columnColor="@color/colorAccent"
+            app:columnMargin="10dp"
+            app:columnWidth="20dp"
+
+            app:textSize="12sp" />
+    </HorizontalScrollView>
+
+    <ImageButton
+        android:id="@+id/imgbtnStatitic"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="300dp"
+        android:background="@color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/icon_statisticconfirm"
+        app:layout_constraintEnd_toEndOf="@+id/cvStatiticRange"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/cvStatiticRange"
+        app:layout_constraintTop_toTopOf="@+id/cvStatiticRange" />
+
+    <TextView
+        android:id="@+id/tvScoreGeneral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="420dp"
+        android:fontFamily="@font/imprima"
+        android:text="Eval: 80"
+        android:textColor="@color/GeneralScore"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvScoreComment2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adjust mental attitude\nKeep it up!"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvScoreComment1"
+        app:layout_constraintTop_toBottomOf="@+id/tvScoreComment1" />
+
+    <TextView
+        android:id="@+id/tvScoreComment1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Great state"
+        android:textColor="@color/GeneralScoreComment1"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvScoreGeneral"
+        app:layout_constraintTop_toBottomOf="@+id/tvScoreGeneral" />
+
+    <ImageView
+        android:id="@+id/ImgvStatisticChart"
+        android:layout_width="105dp"
+        android:layout_height="96dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="224dp"
+        android:src="@drawable/statistic_chart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

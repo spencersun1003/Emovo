@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_1">
+
+    <ImageView
+        android:id="@+id/imgvBG_Menu"
+        android:layout_width="410dp"
+        android:layout_height="65dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/bg_menu" />
+
+    <DatePicker
+        android:id="@+id/dpStatistic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageButton
+        android:id="@+id/imgbtnMainMenu"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/imgvBG_Menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgvBG_Menu"
+        app:srcCompat="@drawable/icon_mainmenu_active" />
+
+    <ImageButton
+        android:id="@+id/imgbtnUserMenu"
+        android:layout_width="32dp"
+        android:layout_height="30dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/imgbtnMainMenu"
+        app:layout_constraintEnd_toEndOf="@+id/imgvBG_Menu"
+        app:layout_constraintStart_toEndOf="@+id/imgbtnMainMenu"
+        app:layout_constraintTop_toTopOf="@+id/imgbtnMainMenu"
+        app:srcCompat="@drawable/icon_usermenu_nonactive" />
+
+    <ImageButton
+        android:id="@+id/imgbtnUtilityMenu"
+        android:layout_width="32dp"
+        android:layout_height="30dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/imgbtnMainMenu"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtnMainMenu"
+        app:layout_constraintStart_toStartOf="@+id/imgvBG_Menu"
+        app:layout_constraintTop_toTopOf="@+id/imgbtnMainMenu"
+        app:srcCompat="@drawable/icon_utilitymenu_nonactive" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
