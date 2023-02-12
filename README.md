@@ -1,58 +1,54 @@
-# Speech Recognition on Android with Wav2Vec2
+# Emovo: Emotion Monitoring Mobile APP Based on Speech Recognition Model
 
 ## Introduction
 
-Facebook AI's [wav2vec 2.0](https://github.com/pytorch/fairseq/tree/master/examples/wav2vec) is one of the leading models in speech recognition. It is also available in the [Huggingface Transformers](https://github.com/huggingface/transformers) library, which is also used in another PyTorch Android demo app for [Question Answering](https://github.com/pytorch/android-demo-app/tree/master/QuestionAnswering).
+This is a final project for AIoT course in Tsinghua University.
 
-In this demo app, we'll show how to quantize, trace, and optimize the wav2vec2 model, powered by the newly released torchaudio 0.9.0, and how to use the converted model on an Android demo app to perform speech recognition.
+Emotional health problems in young people have become the most prevalent of all health problems. 
+Emotional problems develop over time. People often do not realize that their emotions are abnormal at the beginning, so they cannot make timely adjustments.
 
-## Prerequisites
+However, there are no proper tools to help people understand their emotional problems, and the existing tools require their own initiative to record and maintain good habits.
 
-* PyTorch 1.9.0 and torchaudio 0.9.0 (Optional)
-* Python 3.8 (Optional)
-* Android Pytorch library org.pytorch:pytorch_android_lite:1.9.0
-* Android Studio 4.0.1 or later
 
-## Quick Start
+This project aims to develop a real-time emotion monitoring system on edge devices to recognize the emotion by analyzing the speaker's voice intonation. People can use this system to understand their emotions and actively cope with them.
 
-### 1. Get the Repo
+![](/ReadmeImg/Userflow.svg)
 
-Simply run the commands below:
+## Implementation
 
-```
-git clone https://github.com/pytorch/android-demo-app
-cd android-demo-app/SpeechRecognition
-```
 
-If you don't have PyTorch 1.9.0 and torchaudio 0.9.0 installed or want to have a quick try of the demo app, you can download the quantized scripted wav2vec2 model file [here](https://drive.google.com/file/d/1xMh-BZMSIeoohBfZvQFYcemmh5zUn_gh/view?usp=sharing), then drag and drop it to the `app/src/main/assets` folder inside  `android-demo-app/SpeechRecognition`, and continue to Step 3.
+![](/ReadmeImg/AppMainpageDev.svg)
+![](/ReadmeImg/AppStatpageDev.svg)
+![](/ReadmeImg/AppOtherpageDev.svg)
 
-### 2. Prepare the Model
+## User Study
 
-To install PyTorch 1.9.0, torchaudio 0.9.0 and the Hugging Face transformers, you can do something like this:
+We explore the effect of gender, content and language on model performance.
+![](/ReadmeImg/UserStudyQue.svg)
 
-```
-conda create -n wav2vec2 python=3.8.5
-conda activate wav2vec2
-pip install torch torchaudio
-pip install transformers
-```
+We invited 7 males and 5 females to join in the test. Each subject speak 6 Chineses sentences and 6 English sentences as shown in the figure.
+![](/ReadmeImg/UserStudy.svg)
 
-Now with PyTorch 1.9.0 and torchaudio 0.9.0 installed, run the following commands on a Terminal:
+First, we perform normality test (Agostino and Pearson).
+For different sentences, P value varies from 0.052 to 0.477, which means it isn’t a normal  distribution.
+So, we choose Wilcoxon test to explore the difference between male and female.
+As shown in the page, P value varies from 0.0625 to 1, which means the differences were not statistically significant.
 
-```
-python create_wav2vec2.py
-```
-This will create the PyTorch mobile interpreter model file `wav2vec2.ptl`. Copy it to the Android app:
-```
+Then we first deploy Wilcoxon test for 132 pairs of sentences, 21 percent p values are lower than 0.05, we believe the content slightly effects the model performance. We emphasize that we cannot differ the effect of content and fine sorted emotion such as happy and exciting.
 
-mkdir -p app/src/main/assets
-cp wav2vec2.pt app/src/main/assets
-```
+We finally perform Friedman test. The p value among Chinese sentences and English Sentences are both lower than 0.05, which means the differences were statistically significant.
 
-### 2. Build and run with Android Studio
+![](/ReadmeImg/UserStudyAna.svg)
 
-Start Android Studio, open the project located in `android-demo-app/SpeechRecognition`, build and run the app on an Android device. After the app runs, tap the Start button and start saying something; after 6 seconds (you can change `private final static int AUDIO_LEN_IN_SECOND = 6;` in `MainActivity.java` for a shorter or longer recording length), the model will infer to recognize your speech. Some example recognition results are:
+## Teamwork
 
-![](screenshot1.png)
-![](screenshot2.png)
-![](screenshot3.png)
+Yue Sun: Application Developer
+
+Yuang Tong: Emotion Recognition Model Training
+
+Evie Mo: Designer
+
+This project is based on PyTorch template.
+
+Date: 12/28/2021
+
